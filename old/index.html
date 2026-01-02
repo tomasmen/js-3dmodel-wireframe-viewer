@@ -1,10 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js-3dmodel-wireframe-viewer</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
     <style>
         html,
         body {
@@ -21,7 +20,7 @@
             display: block;
         }
 
-        #app {
+        .main-wrapper {
             display: flex;
             flex-direction: column;
         }
@@ -34,16 +33,16 @@
             padding: 1rem;
         }
     </style>
-  </head>
-  <body>
-    <div id="app">
-      <canvas id="displayCanvas"></canvas>
-      <div id="upload-form">
-          <label>Upload your .obj model:</label>
-          <input type="file" accept=".obj" id="fileInput" />
-          <div id="fileStatus"></div>
-      </div>
+</head>
+<body>
+    <div className="main-wrapper">
+        <div id="upload-form">
+            <label>Upload your .obj model:</label>
+            <input type="file" accept=".obj" id="fileEl" />
+            <div id="fileStatus"></div>
+        </div>
+        <canvas id="canvasEl"></canvas>
+        <script src="./script.js"></script>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+</body>
 </html>

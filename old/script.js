@@ -2,6 +2,7 @@ const BACKGROUND = "#000000"
 const FOREGROUND = "rgba(60, 255, 0, 1)"
 const FPS = 60;
 const POINT_DIAMETER = 6;
+const ROTATION_SENS = Math.PI / canvasEl.width;
 
 const ctx = canvasEl.getContext("2d");
 
@@ -224,11 +225,6 @@ function clearFileStatus() {
     fileStatus.innerHTML = "";
 }
 
-function playAnimation() {
-    renderFrame();
-    setTimeout(playAnimation, 1000/FPS);
-}
-
 function drawModelLine(vertices, rotation, translation) {
     for (let i = 0; i < vertices.length-1; i++) {
         var p1 = rotate(globalVertices[vertices[i]], rotation);
@@ -288,7 +284,6 @@ canvasEl.addEventListener("mousedown", (e) => {
     last = getCanvasPos(e);
 });
 
-const ROTATION_SENS = Math.PI / canvasEl.width;
 
 canvasEl.addEventListener("mousemove", (e) => { 
     if (!draggingTranslation && !draggingRotation) return;
